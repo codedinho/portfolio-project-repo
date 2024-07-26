@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Project Images
-const guessThisImageUrl = `${import.meta.env.BASE_URL}docs/imgs/guess-this-pic-2.jpg`;
-const aiAssistantImageUrl = `${import.meta.env.BASE_URL}docs/imgs/ai-assistant-app-pic-1.jpg`;
-const emPowerToolsImageUrl = `${import.meta.env.BASE_URL}docs/imgs/em-powertools-pic-1.jpg`;
-const idleConflictImageUrl = `${import.meta.env.BASE_URL}docs/imgs/idle-conflict-pic-1.jpg`;
+const guessThisImageUrl = `${import.meta.env.BASE_URL}imgs/guess-this-pic-2.jpg`;
+const aiAssistantImageUrl = `${import.meta.env.BASE_URL}imgs/ai-assistant-app-pic-1.jpg`;
+const emPowerToolsImageUrl = `${import.meta.env.BASE_URL}imgs/em-powertools-pic-1.jpg`;
+const idleConflictImageUrl = `${import.meta.env.BASE_URL}imgs/idle-conflict-pic-1.jpg`;
 
 // Icon Images
-const githubIcon = `${import.meta.env.BASE_URL}docs/icons/github.png`;
-const githubHoverIcon = `${import.meta.env.BASE_URL}docs/icons/github-hover.png`;
-const websiteLinkIcon = `${import.meta.env.BASE_URL}docs/icons/websitelink.png`;
-const websiteLinkHoverIcon = `${import.meta.env.BASE_URL}docs/icons/websitelink-hover.png`;
+const githubIcon = `${import.meta.env.BASE_URL}icons/github.png`;
+const githubHoverIcon = `${import.meta.env.BASE_URL}icons/github-hover.png`;
+const websiteLinkIcon = `${import.meta.env.BASE_URL}icons/websitelink.png`;
+const websiteLinkHoverIcon = `${import.meta.env.BASE_URL}icons/websitelink-hover.png`;
 
 console.log("Guess This Image URL:", guessThisImageUrl);
 console.log("AI Assistant Image URL:", aiAssistantImageUrl);
