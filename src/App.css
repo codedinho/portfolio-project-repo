@@ -24,7 +24,9 @@ html, body {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;  
+  min-height: 100vh; 
+  max-width: 100%; /* Prevents exceeding the viewport width */
+  overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
 .scrolling-target {
