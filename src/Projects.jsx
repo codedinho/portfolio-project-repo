@@ -6,6 +6,9 @@ const aiAssistantImageUrl = `${import.meta.env.BASE_URL}imgs/ai-assistant-app-pi
 const emPowerToolsImageUrl = `${import.meta.env.BASE_URL}imgs/em-powertools-pic-1.jpg`;
 const idleConflictImageUrl = `${import.meta.env.BASE_URL}imgs/idle-conflict-pic-1.jpg`;
 
+const emPowerToolsCableDemo = `${import.meta.env.BASE_URL}videos/em-powertools-cable-database-demo.mp4`;
+const emPowerToolsCalulatorsDemo = `${import.meta.env.BASE_URL}videos/em-powertools-calculators-demo.mp4`;
+
 // Icon Images
 const githubIcon = `${import.meta.env.BASE_URL}icons/github.png`;
 const githubHoverIcon = `${import.meta.env.BASE_URL}icons/github-hover.png`;
@@ -92,7 +95,54 @@ const projects = [
   {
     title: "EM POWER TOOLS - HV Solutions Software",
     description: "All in one private cable database and solutions calculator for high voltage cable systems in the UK.",
-    fullDescription: "Full description of project three.",
+    fullDescription: `
+      <h2>EM Power Tools - HV Solutions Software</h2>
+      <p>This project provides an all-in-one private cable database and solutions calculator for high voltage cable systems in the UK.</p>
+      
+      <h3>Project Overview</h3>
+      <p>The EM Power Tools application is designed to serve as a comprehensive solution for managing high voltage cable databases and performing complex engineering calculations. The system leverages MongoDB for data storage, a Node.js server, and a frontend built with JavaScript, HTML, and CSS. Deployment is handled through Heroku.</p>
+      
+      <h3>Cable Database Management</h3>
+      <p>This section of the app allows users to manage their own private cable databases. Each user can add, sort, and filter cables based on their specific requirements. The cable management feature includes:</p>
+      <ul>
+        <li><strong>Customizable Cable Database:</strong> Users can add their own cables or use a preset bank of cables.</li>
+        <li><strong>Sorting and Filtering:</strong> Cables can be sorted based on suitability for specific projects.</li>
+        <li><strong>Project Integration:</strong> Selected cables can be added to projects, enabling detailed calculations and suitability assessments.</li>
+      </ul>
+      <p>Video one demonstrates the functionality of the cable management database.</p>
+      <video controls style="width: 100%; border-radius: 10px; max-width: 1000px; margin: 0px auto; display: block; align-self: center;">
+        <source src="${emPowerToolsCableDemo}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      <h3>Advanced Calculators</h3>
+      <p>The second major feature of the app is a suite of advanced calculators designed for high voltage engineering calculations. These include:</p>
+      <ul>
+        <li><strong>High Voltage Calculators:</strong> Perform detailed voltage-related calculations.</li>
+        <li><strong>Per Unit Calculations:</strong> Essential for system stability and design.</li>
+        <li><strong>CT Sizer:</strong> Calculate and size current transformers accurately.</li>
+      </ul>
+      <p>Video two showcases the functionality of these calculators.</p>
+      <video controls style="width: 100%; border-radius: 10px; max-width: 1000px; margin: 0px auto; display: block; align-self: center;">
+        <source src="${emPowerToolsCalulatorsDemo}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      <h3>Technical Challenges and Solutions</h3>
+      <p>Developing this application presented several technical challenges, including:</p>
+      <ul>
+        <li><strong>Responsive Calculations:</strong> Ensuring all calculations update dynamically and correctly when any field is changed required careful sequencing and error handling.</li>
+        <li><strong>User Authentication:</strong> Implementing secure login with encrypted passwords to protect user data.</li>
+        <li><strong>Database Management:</strong> Creating an efficient and secure database structure to handle extensive cable data and user-specific information.</li>
+      </ul>
+      <p>Overcoming these challenges involved close collaboration with top engineers to validate calculations and ensure the app's reliability and accuracy.</p>
+      
+      <h3>Project Deployment and Future Plans</h3>
+      <p>The app is deployed on Heroku, providing a scalable and reliable platform for users. Future plans include leasing the app to companies in the UK on a subscription basis, tailored to their specific high voltage engineering needs.</p>
+      
+      <h3>Conclusion</h3>
+      <p>The EM Power Tools project highlights my ability to deliver complex, high-functionality web applications. By automating intricate engineering calculations and providing a user-friendly interface, this app significantly reduces the time required for project planning and execution while minimizing the risk of human error.</p>
+    `,
     imageUrl: emPowerToolsImageUrl,
     sourceCode: "https://github.com/codedinho/EMPowerTools",
     websiteLink: "#",
@@ -200,7 +250,7 @@ export const Projects = () => {
       {modalProject && (
         <div style={styles.modalOverlay} onClick={closeModal}>
           <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <h5>{modalProject.title}</h5>
+            <h5 style={styles.modalHeader}>{modalProject.title}</h5>
             <div dangerouslySetInnerHTML={{ __html: modalProject.fullDescription }} />
             <button onClick={closeModal} style={styles.closeButton}>Close</button>
           </div>
@@ -285,8 +335,10 @@ const styles = {
   },
   modalContent: {
     backgroundColor: '#FFF',
-    padding: '20px',
-    borderRadius: '10px',
+    paddingLeft: '60px',
+    paddingRight: '60px',
+    paddingBottom: '40px',
+    borderRadius: '20px',
     width: '1000px',
     maxWidth: '80%',
     maxHeight: '80%',
@@ -297,13 +349,35 @@ const styles = {
     alignItems: 'center',
   },
   closeButton: {
-    marginTop: '10px',
+    marginTop: '20px',
     padding: '10px 20px',
     backgroundColor: '#1d1d1d',
     color: '#FFF',
+    fontSize: '20px',
+    fontWeight: '500',
     border: 'none',
     borderRadius: '10px',
     cursor: 'pointer',
+    fontFamily: 'Mulish, sans-serif',
+  },
+  modalHeader: {
+    width: '100%',
+    textAlign: 'center',
+    marginBottom: '20px',
+    marginLeft: '-60px', // Negative margin to counteract padding
+    marginTop: '0px', // Negative margin to counteract padding
+    marginRight: '-60px', // Negative margin to counteract padding
+    paddingLeft: '60px', // Add padding back to maintain internal spacing
+    paddingRight: '60px', // Add padding back to maintain internal spacing
+    color: 'white',
+    backgroundColor:'#1d1d1d',
+    borderRadius: '20px 20px 0 0',
+  },
+  video: {
+    width: '100%',
+    maxWidth: '600px',
+    margin: '10px auto', // Center the video horizontally
+    display: 'block',
   },
 };
 

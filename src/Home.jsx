@@ -98,15 +98,13 @@ const styles = {
     flex: 1,
     margin: '20px',
     minWidth: '300px',
+    display: 'flex', // Use flexbox for centering image
+    justifyContent: 'center', // Center the image horizontally
   },
   image: {
-    width: '120%',
+    width: '120%', // Adjust width to fill container
     height: 'auto',
-    position: 'relative',
-    justifyContent: 'center',
-    right: '25px',
-    bottom: '10px',
-    zIndex: '1',
+    maxWidth: '330px', // Set a max width for better control
     opacity: '1',
   },
   iconContainer: {
