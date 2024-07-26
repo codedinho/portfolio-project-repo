@@ -79,7 +79,6 @@ const styles = {
   container: {
     textAlign: 'center',
     marginTop: '50px',
-    marginBottom: '50px',
   },
   content: {
     display: 'flex',
