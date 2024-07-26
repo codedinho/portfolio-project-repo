@@ -241,13 +241,12 @@ const styles = {
   },
   imageContainer: {
     flex: 1,
-    margin: '20px',
     minWidth: '300px',
   },
   image: {
     width: '100%',
     height: 'auto',
-    borderRadius: '40px',  // Match the AboutMe image styling
+    borderRadius: '40px 40px 0 0',  // Match the AboutMe image styling
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  // Match the AboutMe image styling
   },
   projectTextContainer: {
