@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/portfolio-project/', // Ensure this matches your GitHub repository name
   plugins: [react()],
   build: {
-    outDir: 'docs' // Output to the docs folder
-  }
+    outDir: 'docs', // Output to the docs folder for GitHub Pages
+  },
 });
+

@@ -1,5 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+// Project Images
+const guessThisImageUrl = `${import.meta.env.BASE_URL}imgs/guess-this-pic-2.jpg`;
+const aiAssistantImageUrl = `${import.meta.env.BASE_URL}imgs/ai-assistant-app-pic-1.jpg`;
+const emPowerToolsImageUrl = `${import.meta.env.BASE_URL}imgs/em-powertools-pic-1.jpg`;
+const idleConflictImageUrl = `${import.meta.env.BASE_URL}imgs/idle-conflict-pic-1.jpg`;
+
+// Icon Images
+const githubIcon = `${import.meta.env.BASE_URL}icons/github.png`;
+const githubHoverIcon = `${import.meta.env.BASE_URL}icons/github-hover.png`;
+const websiteLinkIcon = `${import.meta.env.BASE_URL}icons/websitelink.png`;
+const websiteLinkHoverIcon = `${import.meta.env.BASE_URL}icons/websitelink-hover.png`;
+
+console.log("Guess This Image URL:", guessThisImageUrl);
+console.log("AI Assistant Image URL:", aiAssistantImageUrl);
+console.log("EM Power Tools Image URL:", emPowerToolsImageUrl);
+console.log("Idle Conflict Image URL:", idleConflictImageUrl);
+console.log("GitHub Icon:", githubIcon);
+console.log("GitHub Hover Icon:", githubHoverIcon);
+console.log("Website Link Icon:", websiteLinkIcon);
+console.log("Website Link Hover Icon:", websiteLinkHoverIcon);
+
+
+
 const projects = [
   {
     title: "GUESS THIS! - Interactive Learning Web App",
@@ -54,7 +77,7 @@ const projects = [
       <h2>Conclusion</h2>
       <p>This project showcases my ability to create engaging, user-friendly, and technically robust web applications. Taking an idea from inception, all the way through to deployment. Explore the project on GitHub and experience it live on the Heroku site link.</p>
     `,
-    imageUrl: "/portfolio-project/imgs/guess-this-pic-2.jpg", // Corrected path
+    imageUrl: guessThisImageUrl,
     sourceCode: "https://github.com/codedinho/guess-this",
     websiteLink: "https://guess-this-app-baa2cf38f7de.herokuapp.com/",
   },
@@ -62,7 +85,7 @@ const projects = [
     title: "AI ASSISTANT - ChatGPT Private Room",
     description: "ChatGPT meets Spotify; All of Alexa's functionality with ChatGPT's brain, split into various personalities!",
     fullDescription: "Full description of project two.",
-    imageUrl: "/portfolio-project/imgs/ai-assistant-app-pic-1.jpg", // Corrected path
+    imageUrl: aiAssistantImageUrl,
     sourceCode: "https://github.com/codedinho/jarvis",
     websiteLink: "#",
   },
@@ -70,7 +93,7 @@ const projects = [
     title: "EM POWER TOOLS - HV Solutions Software",
     description: "All in one private cable database and solutions calculator for high voltage cable systems in the UK.",
     fullDescription: "Full description of project three.",
-    imageUrl: "/portfolio-project/imgs/em-powertools-pic-1.jpg", // Corrected path
+    imageUrl: emPowerToolsImageUrl,
     sourceCode: "https://github.com/codedinho/EMPowerTools",
     websiteLink: "#",
   },
@@ -78,7 +101,7 @@ const projects = [
     title: "IDLE CONFLICT - Online Multiplayer Idle War Game",
     description: "An immersive online war strategy game, focused on idle gameplay and RNG based outcomes.",
     fullDescription: "Full description of project four.",
-    imageUrl: "/portfolio-project/imgs/idle-conflict-pic-1.jpg", // Corrected path
+    imageUrl: idleConflictImageUrl,
     sourceCode: "https://github.com/codedinho/idle-conflict",
     websiteLink: "#",
   },
@@ -134,7 +157,15 @@ export const Projects = () => {
               data-animation={index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}
             >
               <div style={styles.imageContainer}>
-                <img src={project.imageUrl} alt={`Project ${index + 1} Image`} style={styles.image} />
+                <img 
+                  src={project.imageUrl} 
+                  alt={`Project ${index + 1} Image`} 
+                  style={styles.image} 
+                  onError={(e) => {
+                    console.error(`Image failed to load: ${project.imageUrl}`);
+                    e.target.style.display = 'none'; // Hide the broken image
+                  }} 
+                />
               </div>
               <div style={styles.projectTextContainer}>
                 <h3>{project.title}</h3>
@@ -142,20 +173,20 @@ export const Projects = () => {
                 <div style={styles.buttonsContainer}>
                   <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
                     <img
-                      src="/portfolio-project/icons/github.png"
+                      src={githubIcon}
                       alt="Source Code"
                       style={styles.icon}
-                      onMouseOver={(e) => (e.currentTarget.src = '/portfolio-project/icons/github-hover.png')}
-                      onMouseOut={(e) => (e.currentTarget.src = '/portfolio-project/icons/github.png')}
+                      onMouseOver={(e) => (e.currentTarget.src = githubHoverIcon)}
+                      onMouseOut={(e) => (e.currentTarget.src = githubIcon)}
                     />
                   </a>
                   <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
                     <img
-                      src="/portfolio-project/icons/websitelink.png"
+                      src={websiteLinkIcon}
                       alt="Website Link"
                       style={styles.icon}
-                      onMouseOver={(e) => (e.currentTarget.src = '/portfolio-project/icons/websitelink-hover.png')}
-                      onMouseOut={(e) => (e.currentTarget.src = '/portfolio-project/icons/websitelink.png')}
+                      onMouseOver={(e) => (e.currentTarget.src = websiteLinkHoverIcon)}
+                      onMouseOut={(e) => (e.currentTarget.src = websiteLinkIcon)}
                     />
                   </a>
                   <span style={styles.seeMore} onClick={() => openModal(project)}>Project Details &rarr;</span>
@@ -168,7 +199,7 @@ export const Projects = () => {
 
       {modalProject && (
         <div style={styles.modalOverlay} onClick={closeModal}>
-          <div style={styles.modalContent} onClick={e => e.stopPropagation()}>
+          <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <h5>{modalProject.title}</h5>
             <div dangerouslySetInnerHTML={{ __html: modalProject.fullDescription }} />
             <button onClick={closeModal} style={styles.closeButton}>Close</button>
@@ -209,11 +240,15 @@ const styles = {
     overflow: 'hidden',
   },
   imageContainer: {
-    width: '100%',
+    flex: 1,
+    margin: '20px',
+    minWidth: '300px',
   },
   image: {
     width: '100%',
     height: 'auto',
+    borderRadius: '40px',  // Match the AboutMe image styling
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  // Match the AboutMe image styling
   },
   projectTextContainer: {
     padding: '20px',
@@ -233,13 +268,6 @@ const styles = {
   seeMore: {
     marginLeft: 'auto',
     cursor: 'pointer',
-    fontWeight: '700',
-    textDecoration: 'underline',
-  },
-  seeMoreHover: {
-    marginLeft: 'auto',
-    cursor: 'pointer',
-    color: 'blue',
     fontWeight: '700',
     textDecoration: 'underline',
   },
@@ -264,11 +292,10 @@ const styles = {
     maxHeight: '80%',
     textAlign: 'left',
     display: 'flex',
-    overflowY: 'auto', // Add vertical scroll if content exceeds modal height#
+    overflowY: 'auto',
     flexDirection: 'column',
     alignItems: 'center',
   },
-
   closeButton: {
     marginTop: '10px',
     padding: '10px 20px',
