@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-const imageUrl = './imgs/about-me-photo.jpg';
+const imageUrl = `${import.meta.env.BASE_URL}imgs/about-me-photo.jpg`;
 
 export const AboutMe = () => {
   const elementsRef = useRef([]);
