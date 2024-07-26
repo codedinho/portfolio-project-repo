@@ -4,7 +4,7 @@ import { faGithub, faLinkedin, faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 export const Home = () => {
-  const imageUrl = import.meta.env.BASE_URL + 'imgs/profile-headshot-charlie.png';
+  const imageUrl = import.meta.env.BASE_URL + '/public/imgs/profile-headshot-charlie.png';
   const elementsRef = useRef([]);
 
   useEffect(() => {

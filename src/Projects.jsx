@@ -54,7 +54,7 @@ const projects = [
       <h2>Conclusion</h2>
       <p>This project showcases my ability to create engaging, user-friendly, and technically robust web applications. Taking an idea from inception, all the way through to deployment. Explore the project on GitHub and experience it live on the Heroku site link.</p>
     `,
-    imageUrl: "/portfolio-project/public/imgs/guess-this-pic-2.jpg",
+    imageUrl: "/imgs/guess-this-pic-2.jpg",
     sourceCode: "https://github.com/codedinho/guess-this",
     websiteLink: "https://guess-this-app-baa2cf38f7de.herokuapp.com/",
   },
@@ -62,15 +62,15 @@ const projects = [
     title: "AI ASSISTANT - ChatGPT Private Room",
     description: "ChatGPT meets Spotify; All of Alexa's functionality with ChatGPT's brain, split into various personalities!",
     fullDescription: "Full description of project two.",
-    imageUrl: "/portfolio-project/public/imgs/ai-assistant-app-pic-1.jpg",
+    imageUrl: "/imgs/ai-assistant-app-pic-1.jpg",
     sourceCode: "https://github.com/codedinho/jarvis",
     websiteLink: "#",
   },
   {
     title: "EM POWER TOOLS - HV Solutions Software",
-    description: "All in one private cable database and solutions calulator for high voltage cable systems in the UK.",
+    description: "All in one private cable database and solutions calculator for high voltage cable systems in the UK.",
     fullDescription: "Full description of project three.",
-    imageUrl: "/portfolio-project/public/imgs/em-powertools-pic-1.jpg",
+    imageUrl: "/imgs/em-powertools-pic-1.jpg",
     sourceCode: "https://github.com/codedinho/EMPowerTools",
     websiteLink: "#",
   },
@@ -78,7 +78,7 @@ const projects = [
     title: "IDLE CONFLICT - Online Multiplayer Idle War Game",
     description: "An immersive online war strategy game, focused on idle gameplay and RNG based outcomes.",
     fullDescription: "Full description of project four.",
-    imageUrl: "/portfolio-project/public/imgs/idle-conflict-pic-1.jpg",
+    imageUrl: "/imgs/idle-conflict-pic-1.jpg",
     sourceCode: "https://github.com/codedinho/idle-conflict",
     websiteLink: "#",
   },
@@ -142,20 +142,20 @@ export const Projects = () => {
                 <div style={styles.buttonsContainer}>
                   <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">
                     <img
-                      src="/portfolio-project/icons/github.png"
+                      src="/icons/github.png"
                       alt="Source Code"
                       style={styles.icon}
-                      onMouseOver={(e) => (e.currentTarget.src = '/portfolio-project/icons/github-hover.png')}
-                      onMouseOut={(e) => (e.currentTarget.src = '/portfolio-project/icons/github.png')}
+                      onMouseOver={(e) => (e.currentTarget.src = '/icons/github-hover.png')}
+                      onMouseOut={(e) => (e.currentTarget.src = '/icons/github.png')}
                     />
                   </a>
                   <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
                     <img
-                      src="/portfolio-project/icons/websitelink.png"
+                      src="/icons/websitelink.png"
                       alt="Website Link"
                       style={styles.icon}
-                      onMouseOver={(e) => (e.currentTarget.src = '/portfolio-project/icons/websitelink-hover.png')}
-                      onMouseOut={(e) => (e.currentTarget.src = '/portfolio-project/icons/websitelink.png')}
+                      onMouseOver={(e) => (e.currentTarget.src = '/icons/websitelink-hover.png')}
+                      onMouseOut={(e) => (e.currentTarget.src = '/icons/websitelink.png')}
                     />
                   </a>
                   <span style={styles.seeMore} onClick={() => openModal(project)}>Project Details &rarr;</span>
