@@ -78,7 +78,6 @@ export const Home = () => {
 const styles = {
   container: {
     textAlign: 'center',
-    marginTop: '50px',
   },
   content: {
     display: 'flex',

@@ -113,7 +113,8 @@ const skills = [
 const styles = {
   container: {
     textAlign: 'center',
-    padding: '125px 20px',
+    padding: '100px 20px',
+    paddingBottom: '150px',
     height: '100%',
   },
   content: {

@@ -215,6 +215,7 @@ const styles = {
     textAlign: 'center',
     padding: '100px',
     height: '100%',
+    marginTop: '50px',
   },
   content: {
     maxWidth: '1000px',
