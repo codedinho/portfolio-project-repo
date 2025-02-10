@@ -39,8 +39,8 @@ export const AboutMe = () => {
           <h3 id="aboutTitle">ABOUT ME</h3>
           <h2>Full-Stack Developer based in Brighton, UK 📍</h2>
           <p>
-            I'm a full-stack Developer currently using JavaScript, HTML5, CSS. I enjoy creating and developing clean code and a pleasing UI/UX for my users.<br /><br />
-            My main stack currently is the MERN stack; MongoDB, Express.js, React.js & Node.js.
+            I'm a full-stack Developer currently using React, JavaScript, HTML5 & CSS. I enjoy creating and developing clean code and a pleasing UI/UX for my users.<br /><br />
+            My main stack currently is the MERN stack; MongoDB, Express.js, React.js/React Native & Node.js.
           </p>
         </div>
       </div>
@@ -81,17 +81,17 @@ const skills = [
   {
     title: 'Front-End',
     icon: 'fas fa-laptop-code',
-    description: 'HTML, CSS, JavaScript & React.js. Fully Responsive & Aesthetic Modern UI/UX.',
+    description: 'HTML, CSS, JavaScript & React.js/React Native. Fully Responsive & Aesthetic Modern UI/UX.',
   },
   {
     title: 'Back-End',
     icon: 'fas fa-server',
-    description: 'Node.js, Express.js, MongoDB, APIs, Database Management & Basic AI/Machine Learning.',
+    description: 'Node.js, Express.js, MongoDB, SQL, APIs, Database Management, Basic AI/Machine Learning & Reporting Services.',
   },
   {
     title: 'Tools & Platforms',
     icon: 'fas fa-tools',
-    description: 'Git, Heroku, Figma, ChatGPT, ProTools, Ableton, Canva, Basic UE5.',
+    description: 'Git, Heroku, AWS, Figma, ChatGPT, ProTools, Ableton, Canva, Basic UE5.',
   },
   {
     title: 'Other Skills',
@@ -170,7 +170,6 @@ const styles = {
     borderRadius: '40px',
     padding: '20px',
     width: '265px',
-    height: '180px',
     textAlign: 'center',
     transition: 'transform 0.3s ease-in-out',
   },
